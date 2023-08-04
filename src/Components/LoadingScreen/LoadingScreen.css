@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'SourceCodePro-Regular';
+    src: url('../../Resources/Fonts/SourceCodePro-Regular.ttf') format('woff2');
+    
+  }
+
+  @font-face {
+    font-family: 'SourceCodePro-Bold';
+    src: url('../../Resources/Fonts/SourceCodePro-Bold.ttf') format('woff2');
+    
+  }
+
+  @font-face {
+    font-family: 'SourceCodePro-Light';
+    src: url('../../Resources/Fonts/SourceCodePro-Light.ttf') format('woff2');
+    
+  }
+
+  @font-face {
+    font-family: 'SourceCodePro-ExtraLight';
+    src: url('../../Resources/Fonts/SourceCodePro-ExtraLight.ttf') format('woff2');
+    
+  }
+
+.loading-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(4, 8, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.loading-screen-content {
+    background-color: rgb(4, 8, 23);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-family: 'SourceCodePro-Light';
+}
+
+.loading-circle {
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid rgb(116, 255, 188); /* Change to your desired color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

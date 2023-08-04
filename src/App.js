@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Hero from './Components/Hero/Hero';
 import Navbar from './Components/Navbar/Navbar';
 import Services from './Components/Services/Services';
@@ -10,6 +10,7 @@ import axios from "axios";
 import deTranslation from "../src/Resources/Translations/de/translation.json";
 import slTranslation from "../src/Resources/Translations/sl/translation.json";
 import enTranslation from "../src/Resources/Translations/en/translation.json"; // Import your translation files
+import LoadingScreen from './Components/LoadingScreen/LoadingScreen';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -24,6 +25,12 @@ i18n.use(initReactI18next).init({
 });
 
 function App() {
+  const [isSplineLoading, setIsSplineLoading] = useState(false);
+
+    const handleSplineLoaded = () => {
+        setIsSplineLoading(true);
+    };
+
 
   useEffect(() => {
     axios
@@ -40,10 +47,12 @@ function App() {
   }, []);
 
   return (
+
     <div>
       <Navbar/>
-      <Hero/>
+      <Hero onSplineLoaded={handleSplineLoaded}/>
       <Services/>
+      {!isSplineLoading && <LoadingScreen />}
     </div>
   );
 }

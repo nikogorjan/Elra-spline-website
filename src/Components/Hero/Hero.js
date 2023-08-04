@@ -3,7 +3,7 @@ import './Hero.css'
 import SplineAnimation from './Spline';
 import { useTranslation } from "react-i18next";
 
-const Hero = () => {
+const Hero = ({ onSplineLoaded }) => {
     const { t } = useTranslation();
 
     return (
@@ -17,7 +17,7 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className='hero-spline'>
-                    <SplineAnimation/>
+                    <SplineAnimation onSplineLoaded={onSplineLoaded}/>
                 </div>
             </div>
         </div>
