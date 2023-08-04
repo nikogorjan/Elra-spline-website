@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
 import './Navbar.css'
+import { useTranslation } from "react-i18next";
 
 
 const Navbar = () => {
+    const { t } = useTranslation();
+
     const [isMenuOpen, setMenuOpen] = useState(false);
 
     const handleMenuToggle = () => {
@@ -30,12 +33,12 @@ const Navbar = () => {
         <div className='navbar-main'>
             <div className='navbar-layout'>
                 <div className='navbar-company-name'>ELRA</div>
-                <div className='navbar-company-service'>Elektroinštalacije</div>
+                <div className='navbar-company-service'>{t("elin")}</div>
                 <div className='navbar-navigation-links'>
-                    <div className='navbar-link'>STORITVE</div>
-                    <div className='navbar-link'>O NAS</div>
-                    <div className='navbar-link'>GALERIJA</div>
-                    <div className='navbar-link green-link'>KONTAKT</div>
+                    <div className='navbar-link'>{t("services")}</div>
+                    <div className='navbar-link'>{t("aboutUs")}</div>
+                    <div className='navbar-link'>{t("galerija")}</div>
+                    <div className='navbar-link green-link'>{t("contact")}</div>
 
                     <div className='navbar-menu-link'>
                         <div
@@ -49,10 +52,10 @@ const Navbar = () => {
 
                         <div className={`menu ${isMenuOpen ? "open" : ""}`}>
                             
-                            <div className='navbar-link-open'>STORITVE</div>
-                    <div className='navbar-link-open'>O NAS</div>
-                    <div className='navbar-link-open'>GALERIJA</div>
-                    <div className='navbar-link-open green-link '>KONTAKT</div>
+                            <div className='navbar-link-open'>{t("services")}</div>
+                    <div className='navbar-link-open'>{t("aboutUs")}</div>
+                    <div className='navbar-link-open'>{t("galerija")}</div>
+                    <div className='navbar-link-open green-link '>{t("contact")}</div>
                             
                         </div>
                     </div>
