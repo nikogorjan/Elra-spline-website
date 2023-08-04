@@ -6,6 +6,8 @@ import Slika3 from '../../Resources/Images/slika3.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+
+
 const Services = () => {
     return (
         <div className='services-main'>
