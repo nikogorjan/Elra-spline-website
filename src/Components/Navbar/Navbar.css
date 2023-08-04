@@ -1,0 +1,195 @@
+@font-face {
+  font-family: 'SourceCodePro-Regular';
+  src: url('../../Resources/Fonts/SourceCodePro-Regular.ttf') format('woff2');
+  
+}
+
+@font-face {
+  font-family: 'SourceCodePro-Bold';
+  src: url('../../Resources/Fonts/SourceCodePro-Bold.ttf') format('woff2');
+  
+}
+
+@font-face {
+  font-family: 'SourceCodePro-Light';
+  src: url('../../Resources/Fonts/SourceCodePro-Light.ttf') format('woff2');
+  
+}
+
+@font-face {
+  font-family: 'SourceCodePro-ExtraLight';
+  src: url('../../Resources/Fonts/SourceCodePro-ExtraLight.ttf') format('woff2');
+  
+}
+
+.navbar-main{
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    z-index: 90000;
+    position: absolute; /* or sticky, depending on your design */
+  top: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Horizontally center the items */
+  align-items: center; /* Vertically center the items */
+}
+
+.navbar-layout{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.navbar-company-name{
+  color: white;
+  font-family: 'SourceCodePro-Bold';
+  font-size: 48px;
+}
+
+.navbar-company-service{
+  color: white;
+  font-family: 'SourceCodePro-Light';
+  font-size: 14px;
+  margin-left: 20px;
+  margin-top: 23px;
+}
+
+.navbar-navigation-links{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+
+}
+
+.navbar-link{
+  color: white;
+  font-family: 'SourceCodePro-Bold';
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: 50px;
+}
+
+.navbar-link:hover{
+  transform: scale(1.1);
+}
+
+.green-link{
+  color: rgb(116, 255, 188);
+}
+
+.navbar-menu-link{
+  color: white;
+  font-family: 'SourceCodePro-Bold';
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+  background-color: white;
+  margin-bottom: 6px;
+}
+
+.line:first-child,
+.line:last-child {
+width: 32.5px;
+}
+
+.line:nth-child(2) {
+width: 40px;
+
+}
+
+.menu-icon:hover .line:first-child,
+.menu-icon:hover .line:last-child {
+width: 40px;
+}
+
+.menu-icon:hover .line:nth-child(2) {
+width: 32.5px;
+}
+
+.menu {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  border-radius: 0px;
+  color: white;
+  width: 80%;
+  height: 0px;
+  overflow: hidden;
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  opacity: 1;
+  transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menu.open {
+  opacity: 1;
+  height: 300px;
+}
+
+
+.navbar-link-open{
+  font-family: 'SourceCodePro-Bold';
+  margin-bottom: 3px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 1000px) {
+  .navbar-link {
+    display: none;
+  }
+
+  /* Show the "MENU" link only when screen width is less than 1000px */
+  .navbar-navigation-links .navbar-menu-link {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: 'SourceCodePro-Bold';
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .navbar-company-name{
+    color: white;
+    font-family: 'SourceCodePro-Bold';
+    font-size: 32px;
+  }
+  
+  .navbar-company-service{
+    color: white;
+    font-family: 'SourceCodePro-Light';
+    font-size: 10px;
+    margin-left: 10px;
+    margin-top: 14px;
+  }
+}
+
+@media (min-width: 1001px) {
+  .navbar-menu-link {
+    display: none;
+  }
+
+  
+
+  
+}
