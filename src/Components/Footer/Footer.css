@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('../../Resources/Fonts/Inter-Regular.ttf') format('woff2');
+
+}
+
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('../../Resources/Fonts/Inter-Bold.ttf') format('woff2');
+
+}
+
+@font-face {
+  font-family: 'Inter-Light';
+  src: url('../../Resources/Fonts/Inter-Light.ttf') format('woff2');
+
+}
+
+@font-face {
+  font-family: 'Inter-ExtraLight';
+  src: url('../../Resources/Fonts/Inter-ExtraLight.ttf') format('woff2');
+
+}
+
+.footer-main {
+  padding: 50px;
+  background-color: white;
+  z-index: 600;
+
+
+  display: flex;
+  /* Use flexbox layout */
+
+}
+
+.footer-layout {
+  display: flex;
+  width: 100%;
+}
+
+.footer-column1{
+  margin-right: 121px;
+}
+
+.fotter-h{
+  font-family: 'Inter-Regular';
+  font-style: normal;
+    font-weight: 400;
+  color: #042C53;
+  font-size: 24px;
+}
+
+.storitev-footer-p{
+  font-family: 'Inter-Regular';
+  color: #042C53;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.column2{
+
+}
+
+.navbar-layout {
+  width: 90%;
+  display: flex;
+  align-items: center;
+
+}
+
+.footer-contact-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-services-div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-phone {
+  font-size: 12px;
+  font-family: 'Inter-Regular';
+  color: white;
+
+}
+
+.phone-icon {
+  margin-right: 12px;
+  color: rgb(116, 255, 188);
+}
+
+.footer-contact-link {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.logo-holder {
+  width: 200px;
+}
+
+.logo-foot {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .footer-contact-div {
+    flex-direction: column;
+    align-items: first baseline;
+    justify-content: left;
+  }
+
+  .footer-contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+    padding: 10px;
+  }
+
+  .footer-main {
+    padding: 50px;
+    background-color: white;
+    z-index: 600;
+
+
+    display: flex;
+    /* Use flexbox layout */
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .footer-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-column1{
+    margin-right: 0px;
+    margin-top: 32px;
+  }
+}

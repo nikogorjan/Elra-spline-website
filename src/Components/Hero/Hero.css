@@ -1,30 +1,34 @@
 @font-face {
-    font-family: 'SourceCodePro-Regular';
-    src: url('../../Resources/Fonts/SourceCodePro-Regular.ttf') format('woff2');
+    font-family: 'Inter-Regular';
+    src: url('../../Resources/Fonts/Inter-Regular.ttf') format('woff2');
     
   }
-
+  
   @font-face {
-    font-family: 'SourceCodePro-Bold';
-    src: url('../../Resources/Fonts/SourceCodePro-Bold.ttf') format('woff2');
+    font-family: 'Inter-Bold';
+    src: url('../../Resources/Fonts/Inter-Bold.ttf') format('woff2');
     
   }
-
+  
   @font-face {
-    font-family: 'SourceCodePro-Light';
-    src: url('../../Resources/Fonts/SourceCodePro-Light.ttf') format('woff2');
+    font-family: 'Inter-Light';
+    src: url('../../Resources/Fonts/Inter-Light.ttf') format('woff2');
     
   }
-
+  
   @font-face {
-    font-family: 'SourceCodePro-ExtraLight';
-    src: url('../../Resources/Fonts/SourceCodePro-ExtraLight.ttf') format('woff2');
+    font-family: 'Inter-ExtraLight';
+    src: url('../../Resources/Fonts/Inter-ExtraLight.ttf') format('woff2');
     
   }
 
 .hero-main{
     width: 100%;
-    background-color: rgb(4, 8, 23);
+    background-color: black;
+    position: relative; /* Add this */
+    z-index: 1; /* Add this */
+    overflow: hidden;
+    margin-top: 80px;
 }
 
 .hero-layout{
@@ -35,59 +39,124 @@
     flex-direction: row;
 }
 
+.hero-layout-desktop{
+    position: absolute;
+  top: 10%;
+  left: 7%;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
 .hero-headers{
-    width: 80%; 
+    width: 100%; 
 }
 
 .hero-headers-content{
-    position: relative;
-    top: 15%;
+    
 }
 
 .hero-spline{
     height: 70vh;
-   width: 100%;
+   width: 50%;
 }
 
+.hero-video {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+
 .hero-main-header{
-    font-family: 'SourceCodePro-Bold';
-    color: white;
-    font-size: clamp(1rem, 0.6rem + 2.1333vw, 4rem);
+    font-family: 'Inter-Bold';
+    font-style: normal;
+    font-weight: 400;
+    color: #EEEEEE;
+    font-size: clamp(2rem, 1.7345rem + 1.4159vw, 4rem);
 }
 
 .hero-main-subheader{
-    font-family: 'SourceCodePro-Light';
-    color: white;
+    font-family: 'Inter-Light';
+    font-style: normal;
+  font-weight: 400;
+    color: #EEEEEE;
     font-size: clamp(0.75rem, 0.6833rem + 0.3556vw, 1.25rem);
 }
 
 .hero-main-button{
     margin-top: 50px;
-    width: 250px;
-    height: 70px;
-    background-color: rgb(116, 255, 188);
+    width: 135px;
+    height: 39px;
+    border-radius: 50px;
+    background-color: #8E8CF2;
     color: rgb(4, 8, 23);
-    font-family: 'SourceCodePro-Bold';
-    border: 1px solid rgb(116, 255, 188);
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    border: 1px solid #8E8CF2;
+    font-size: 12px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Add transition property */
+    transition: box-shadow 0.6s ease;
+
+}
+
+.buttons-row-hero{
+    display: flex;
+}
+
+.hero-main-button2{
+    font-size: 12px;
+    margin-top: 50px;
+    margin-left: 16px;
+    width: 135px;
+    height: 39px;
+    border-radius: 50px;
+    background-color: black;
+    color: rgb(4, 8, 23);
+    font-family: 'Inter-Regular';
+    font-style: normal;
+  font-weight: 400;
+    border: 1px solid #8E8CF2;
+    cursor: pointer;
+    transition: box-shadow 0.6s ease;
+    color: #EEEEEE;
 
 }
 
 .hero-main-button:hover{
-    background-color: rgb(4, 8, 23);
-    color: white;
+    box-shadow: inset 11.5em 0 0 0 black;
+  color: #EEEEEE;
+  border: 1px solid #8E8CF2;
+}
+
+/*.hero-main-button2:hover{
+    background-color: #8E8CF2;
+    color: black;
+}*/
+
+.hero-main-button2:hover {
+    box-shadow: inset 11.5em 0 0 0 #8E8CF2;
+    color: black;
+    border: 1px solid #8E8CF2;
+
+}
+
+.hero-mobile{
+    display: none;
+}
+
+.hero-desktop{
+    display: block;
 }
 
 @media screen and (min-width: 1921px) {
     /* Your CSS styles for displays with width larger than or equal to 1920px here */
-    .hero-main-header{
-        font-size: 80px;
-    }
+    
 
-    .hero-main-subheader{    
-        font-size: 24px;
-    }
+    
 
     .hero-spline{
         position: relative;
@@ -95,30 +164,50 @@
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     .hero-layout{
         flex-direction: column;
+        margin-top: 20px;
     }
 
     .hero-headers{
         width: 100%;
     }
 
-    .hero-main-header{
-        font-size: 30px;
-    }
     
-    .hero-main-subheader{
-        font-size: 12px;
-    }
+    .hero-video {
+    
+        width: 200%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-25%);
+      }
+    
 
     .hero-spline{
         margin-top: 40px;
+        width: 100%;
     }
 
     .hero-main-button{
-        margin-top: 20px;
-        width: 175px;
-        height: 50px;
+        margin-top: 50px;
+        width: 135px;
+        height: 39px;
     }
+
+    .hero-mobile{
+        display: block;
+    }
+    
+    .hero-desktop{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    /* Your CSS styles for displays with width larger than or equal to 1920px here */
+    
+
+    
 }

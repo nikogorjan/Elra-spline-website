@@ -1,128 +1,195 @@
 @font-face {
-    font-family: 'SourceCodePro-Regular';
-    src: url('../../Resources/Fonts/SourceCodePro-Regular.ttf') format('woff2');
+    font-family: 'Inter-Regular';
+    src: url('../../Resources/Fonts/Inter-Regular.ttf') format('woff2');
+    
+  }
+  
+  @font-face {
+    font-family: 'Inter-Bold';
+    src: url('../../Resources/Fonts/Inter-Bold.ttf') format('woff2');
+    
+  }
+  
+  @font-face {
+    font-family: 'Inter-Light';
+    src: url('../../Resources/Fonts/Inter-Light.ttf') format('woff2');
+    
+  }
+  
+  @font-face {
+    font-family: 'Inter-ExtraLight';
+    src: url('../../Resources/Fonts/Inter-ExtraLight.ttf') format('woff2');
     
   }
 
-  @font-face {
-    font-family: 'SourceCodePro-Bold';
-    src: url('../../Resources/Fonts/SourceCodePro-Bold.ttf') format('woff2');
-    
-  }
-
-  @font-face {
-    font-family: 'SourceCodePro-Light';
-    src: url('../../Resources/Fonts/SourceCodePro-Light.ttf') format('woff2');
-    
-  }
-
-  @font-face {
-    font-family: 'SourceCodePro-ExtraLight';
-    src: url('../../Resources/Fonts/SourceCodePro-ExtraLight.ttf') format('woff2');
-    
-  }
 
 .services-main{
     width: 100%;
-    background-color: rgb(4, 8, 23);
+    margin-top: 192px;
 }
 
-.services-layout{
-    width: 90%;
+.services-wrapper{
+    width: 80%;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    margin-top: 70px;
 }
 
-.services-container{
+.services-column1{
+    width: 50%;
+}
+
+.services-column2{
+    width: 50%;
+    margin-top: 20%;
+}
+
+.service-cell{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 121px;
+}
+
+.service-img{
     width: 100%;
-    padding: 30px;
 }
 
-.services-service{
+.service-paragraph{
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    color: #EEEEEE;
+    font-size: clamp(2rem, 1.7345rem + 1.4159vw, 4rem);
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.services-link{
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    color: #8E8CF2;
+    font-size: clamp(1rem, 0.9336rem + 0.354vw, 1.5rem);
+        margin: 0px;
+}
+    
+
+.more-div{
     display: flex;
-    flex-direction: column;
-    background-color: rgb(25, 28, 42);
-    opacity: 1;
-    min-height: 550px;
+}
+
+.arrow-margin{
+    margin-left: 12px;
+    transition: margin 0.3s ease;
+}
+
+.more-div{
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
-.services-service:hover {
-    transform: scale(1.1);
-    background-color: rgb(35, 38, 52);
-  }
-
-.services-service-image{
-    width: 100%;
-    height: 260px;
-    background-color: white;
-    opacity: 1;
+.more-div:hover .arrow-margin{
+    margin-left: 24px;
 }
 
-.service-hook{
-    color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-    text-align: justify;
+.super-button{
+    font-size: 16px;
+    
+    width: 240px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: black;
+    color: rgb(4, 8, 23);
+    font-family: 'Inter-Regular';
+    font-style: normal;
+    font-weight: 400;
+    border: 1px solid #8E8CF2;
+    cursor: pointer;
+    transition: box-shadow 0.6s ease;
+    color: #EEEEEE;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%) translateY(-70px);
 }
 
-.service-hook-header{
-    font-family: 'SourceCodePro-Bold';
+
+
+/*.super-button:hover{
+    background-color: #8E8CF2;
+    color: black;
+}*/
+
+.super-button:hover {
+    box-shadow: inset 19.5em 0 0 0 #8E8CF2;
+    color: black;
+    border: 1px solid #8E8CF2;
+
 }
 
-.service-hook-paragraph{
-    font-family: 'SourceCodePro-Light';
+@media screen and (max-width: 1400px) {
+    .services-wrapper{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+    }
 }
-
-.services-service {
-    position: relative; /* Set the parent container to relative positioning */
-  }
-
-  .service-hook {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column;
-  }
-
-  .arrow-icon {
-    margin-top: auto; /* Push the arrow to the bottom of the container */
-    margin-bottom: 20px;
-    margin-left: 20px;
-  }
-  
-  .arrow-icon svg {
-    fill: #74ffbc; /* Change the color of the icon (if needed) */
-    width: 40px; /* Set the desired width for the icon */
-    height: 40px; /* Set the desired height for the icon */
-}
-
 
 @media screen and (max-width: 1000px) {
-    .services-layout{
-        flex-direction: column;
+    .services-wrapper{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
     }
 
-    .services-container{
-        padding: 0px;
-        padding-bottom: 30px;
+    .service-cell{
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 80px;
     }
+
+    .services-main{
+        width: 100%;
+        margin-top: 121px;
+    }
+
 }
 
-@media screen and (min-width: 1921px) {
-    .services-service{
-        display: flex;
+@media screen and (max-width: 700px) {
+    .services-wrapper{
         flex-direction: column;
-        background-color: rgb(25, 28, 42);
-        opacity: 1;
-        min-height: 700px;
     }
-    
-    .services-service-image{
+
+    .services-column1{
         width: 100%;
-        height: 360px;
-        background-color: white;
-        opacity: 1;
+    }
+
+    .services-column2{
+        margin-top: 0%;
+        width: 100%;
+
+    }
+
+    .service-cell{
+        width: 80%;
+        margin: 0 auto;
+        position: relative;
+        margin-bottom: 64px;
+    }
+
+    .services-main{
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .super-button{
+        
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%) translateY(-32px);
     }
 }

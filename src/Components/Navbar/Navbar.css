@@ -1,24 +1,24 @@
 @font-face {
-  font-family: 'SourceCodePro-Regular';
-  src: url('../../Resources/Fonts/SourceCodePro-Regular.ttf') format('woff2');
+  font-family: 'Inter-Regular';
+  src: url('../../Resources/Fonts/Inter-Regular.ttf') format('woff2');
   
 }
 
 @font-face {
-  font-family: 'SourceCodePro-Bold';
-  src: url('../../Resources/Fonts/SourceCodePro-Bold.ttf') format('woff2');
+  font-family: 'Inter-Bold';
+  src: url('../../Resources/Fonts/Inter-Bold.ttf') format('woff2');
   
 }
 
 @font-face {
-  font-family: 'SourceCodePro-Light';
-  src: url('../../Resources/Fonts/SourceCodePro-Light.ttf') format('woff2');
+  font-family: 'Inter-Light';
+  src: url('../../Resources/Fonts/Inter-Light.ttf') format('woff2');
   
 }
 
 @font-face {
-  font-family: 'SourceCodePro-ExtraLight';
-  src: url('../../Resources/Fonts/SourceCodePro-ExtraLight.ttf') format('woff2');
+  font-family: 'Inter-ExtraLight';
+  src: url('../../Resources/Fonts/Inter-ExtraLight.ttf') format('woff2');
   
 }
 
@@ -26,13 +26,11 @@
     width: 100%;
     height: 80px;
     background-color: black;
-    z-index: 90000;
-    position: absolute; /* or sticky, depending on your design */
+    z-index: 90;
+    position: fixed; /* or sticky, depending on your design */
   top: 0;
   left: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
+  
   display: flex; /* Use flexbox layout */
   justify-content: center; /* Horizontally center the items */
   align-items: center; /* Vertically center the items */
@@ -47,17 +45,28 @@
 }
 
 .navbar-company-name{
-  color: white;
-  font-family: 'SourceCodePro-Bold';
-  font-size: 48px;
+  color: #EEEEEE;
+  font-family: 'Inter-Bold';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  cursor: pointer;
+  height: 32px;
+  width: 75px;
+}
+
+.logo-img{
+  width: 100%;
 }
 
 .navbar-company-service{
-  color: white;
-  font-family: 'SourceCodePro-Light';
-  font-size: 14px;
-  margin-left: 20px;
-  margin-top: 23px;
+  color: #EEEEEE;
+  font-family: 'Inter-Light';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  margin-left: 10px;
+  margin-top: 22px;
 }
 
 .navbar-navigation-links{
@@ -68,8 +77,10 @@
 }
 
 .navbar-link{
-  color: white;
-  font-family: 'SourceCodePro-Bold';
+  color: #EEEEEE;
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -77,16 +88,27 @@
 }
 
 .navbar-link:hover{
-  transform: scale(1.1);
+  color: #8E8CF2;
+}
+
+.flag-circle:hover{
+  transform: scale(1.15);
+
 }
 
 .green-link{
-  color: rgb(116, 255, 188);
+  color: #8E8CF2;
+}
+
+.green-link:hover{
+  color: #EEEEEE;
 }
 
 .navbar-menu-link{
-  color: white;
-  font-family: 'SourceCodePro-Bold';
+  color: #EEEEEE;
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -95,9 +117,9 @@
 .line {
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: #EEEEEE;
   transition: width 0.3s ease-in-out;
-  background-color: white;
+  background-color: #EEEEEE;
   margin-bottom: 6px;
 }
 
@@ -122,13 +144,13 @@ width: 32.5px;
 
 .menu {
   position: absolute;
-  top: 100px;
+  top: 75px;
   left: 50%;
   transform: translateX(-50%);
   background-color: black;
   border-radius: 0px;
-  color: white;
-  width: 80%;
+  color: #EEEEEE;
+  width: 100%;
   height: 0px;
   overflow: hidden;
   display: flex; /* Use flexbox layout */
@@ -146,7 +168,9 @@ width: 32.5px;
 
 
 .navbar-link-open{
-  font-family: 'SourceCodePro-Bold';
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  font-weight: 400;
   margin-bottom: 3px;
   font-size: 24px;
   cursor: pointer;
@@ -178,7 +202,7 @@ width: 32.5px;
   top: 100%;
   left: 0;
   display: none;
-  background-color: white;
+  background-color: #EEEEEE;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -207,14 +231,101 @@ width: 32.5px;
 }
 
 .flag-option.active {
-  background-color: #74ffbc;
+  background-color: #8E8CF2;
 }
 
 .flag-margin{
   margin-top: 20px;
 }
 
+a {
+  text-decoration: none;
+  transition: color 0.3s;
+  outline: none;
+  color: #EEEEEE;
+}
 
+.contact-animate{
+  color: #8E8CF2;
+
+}
+
+a:hover,
+a:focus {
+  color: #8E8CF2;
+}
+
+a.flip-animate {
+  perspective: 1000px;
+  
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0;    
+    transition: transform 0.3s;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+  }
+  
+  span:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: attr(data-hover);
+    transition: color 0.3s;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 0;
+    text-align: center;
+  }
+  
+  &:hover span,
+  &:focus span {
+    transform: rotateX(90deg) translateY(-22px);
+  }
+  
+  &:hover span:before,
+  &:focus span:before {
+    color: #8E8CF2;
+  }
+}
+
+a.flip-animate2 {
+  perspective: 1000px;
+  
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0;    
+    transition: transform 0.3s;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+  }
+  
+  span:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: attr(data-hover);
+    transition: color 0.3s;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 0;
+    text-align: center;
+  }
+  
+  &:hover span,
+  &:focus span {
+    transform: rotateX(90deg) translateY(-22px);
+  }
+  
+  &:hover span:before,
+  &:focus span:before {
+    color: #EEEEEE;
+  }
+}
 
 
 @media (max-width: 1000px) {
@@ -226,24 +337,37 @@ width: 32.5px;
   .navbar-navigation-links .navbar-menu-link {
     display: flex;
     align-items: center;
-    color: white;
-    font-family: 'SourceCodePro-Bold';
+    color: #EEEEEE;
+    font-family: 'Inter-Regular';
+    font-style: normal;
+  font-weight: 400;
     font-size: 14px;
     cursor: pointer;
   }
 
   .navbar-company-name{
-    color: white;
-    font-family: 'SourceCodePro-Bold';
+    color: #EEEEEE;
+    font-family: 'Inter-Bold';
+    font-style: normal;
+  font-weight: 400;
     font-size: 32px;
+    cursor: pointer;
+    height: 32px;
+    width: 75px;
+  }
+
+  .logo-img{
+    width: 100%;
   }
   
   .navbar-company-service{
-    color: white;
-    font-family: 'SourceCodePro-Light';
+    color: #EEEEEE;
+    font-family: 'Inter-Light';
+    font-style: normal;
+  font-weight: 400;
     font-size: 10px;
     margin-left: 10px;
-    margin-top: 14px;
+    margin-top: 22px;
   }
 
   .flag-circle {
