@@ -1,8 +1,6 @@
 import './App.css';
-import React, { useEffect, useState } from "react";
-import Hero from './Components/Hero/Hero';
-import Navbar from './Components/Navbar/Navbar';
-import Services from './Components/Services/Services';
+import React, { useEffect} from "react";
+
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 import axios from "axios";
@@ -10,7 +8,13 @@ import axios from "axios";
 import deTranslation from "../src/Resources/Translations/de/translation.json";
 import slTranslation from "../src/Resources/Translations/sl/translation.json";
 import enTranslation from "../src/Resources/Translations/en/translation.json"; // Import your translation files
-import LoadingScreen from './Components/LoadingScreen/LoadingScreen';
+
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom"; // Import Router from react-router-dom
+import Pages from './Pages';
+import { HelmetProvider } from 'react-helmet-async';
+import ContactPage from './Components/ContactPage/ContactPage';
+import AboutUs from './Components/AboutUs/AboutUs';
+
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -25,11 +29,7 @@ i18n.use(initReactI18next).init({
 });
 
 function App() {
-  const [isSplineLoading, setIsSplineLoading] = useState(false);
-
-    const handleSplineLoaded = () => {
-        setIsSplineLoading(true);
-    };
+  
 
 
   useEffect(() => {
@@ -47,13 +47,18 @@ function App() {
   }, []);
 
   return (
+    <HelmetProvider>
+      <Router> {/* Wrap your entire app with Router */}
+      <Routes>
+        <Route path="/" element={<Pages />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactPage />} />
 
-    <div>
-      <Navbar/>
-      <Hero onSplineLoaded={handleSplineLoaded}/>
-      <Services/>
-      {!isSplineLoading && <LoadingScreen />}
-    </div>
+      </Routes>
+    </Router>
+    </HelmetProvider>
+
+    
   );
 }
 

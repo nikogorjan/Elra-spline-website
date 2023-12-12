@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../../Resources/Fonts/Inter-Regular.ttf') format('woff2');
+    
+  }
+  
+  @font-face {
+    font-family: 'Inter-Bold';
+    src: url('../../Resources/Fonts/Inter-Bold.ttf') format('woff2');
+    
+  }
+  
+  @font-face {
+    font-family: 'Inter-Light';
+    src: url('../../Resources/Fonts/Inter-Light.ttf') format('woff2');
+    
+  }
+  
+  @font-face {
+    font-family: 'Inter-ExtraLight';
+    src: url('../../Resources/Fonts/Inter-ExtraLight.ttf') format('woff2');
+    
+  }
+
+.razlogi-main{
+    width: 100%;
+    margin-top: 220px;
+}
+
+.razlogi-wrapper{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 64px;
+}
+
+.razlogi-row{
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+        align-items: center;
+}
+
+.razlo-cell{
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.razlo-cell:hover{
+    transform: scale(1.2);
+}
+
+.nomargin{
+    margin-left: 0px;
+}
+
+.the-header-of-razlog{
+    align-self: center;
+    font-family: 'Inter-Bold';
+    font-style: normal;
+    font-weight: 400;
+    color: #EEEEEE;
+    font-size: clamp(2rem, 1.7345rem + 1.4159vw, 4rem);
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1300px) {
+    .razlogi-wrapper{
+        display: flex;
+        width: 70%;
+
+    }
+    .razlogi-row{
+        display: flex;
+        margin-bottom: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .razlo-cell{
+        width: 50%;
+    }
+
+    .razlogi-main{
+        width: 100%;
+        margin-top: 121px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .razlogi-wrapper{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin-top: 32px;
+    }
+
+    .razlo-cell{
+        width: 100%;
+    }
+
+    .razlogi-row{
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .razlogi-main{
+        width: 100%;
+        margin-top: 80px;
+    }
+}

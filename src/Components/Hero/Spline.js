@@ -2,7 +2,7 @@ import React from 'react';
 import Spline from '@splinetool/react-spline';
 
 const SplineAnimation = ({ onSplineLoaded }) => {
-    var i = 0;
+    
     const handleLoad = () => {
         onSplineLoaded();
         console.log('Spline loaded');

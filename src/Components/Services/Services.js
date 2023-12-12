@@ -1,59 +1,116 @@
-import React from 'react';
+import React, { useEffect } from 'react'
 import './Services.css'
-import Slika1 from '../../Resources/Images/slika1.jpg';
-import Slika2 from '../../Resources/Images/slika2.jpg';
-import Slika3 from '../../Resources/Images/slika3.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import instalacije from '../../Resources/Icons/webpinstalacije.webp'
+import razsvetljava from '../../Resources/Icons/webprazsvetljava.webp'
+import crpalke from '../../Resources/Icons/webpcrpalka.webp'
+import smart from '../../Resources/Icons/webpsmart.webp'
+import strelo from '../../Resources/Icons/webpstrelovod.webp'
+import { useTranslation } from "react-i18next";
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 const Services = () => {
+    const { t } = useTranslation();
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            document.querySelectorAll('.service-cell').forEach((cell) => {
+                let timeline = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: cell,
+                        start: 'top center',
+                        markers: false,
+                        scrub: true,
+                    },
+                });
+
+                timeline.to(cell.querySelector('.services-paragraph-container'), {
+                    translateY: -80,
+                    opacity: 1,
+                    duration: 0.5,
+                });
+            });
+        });
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <div className='services-main'>
-            <div className='services-layout'>
-                <div className='services-container'>
-                    <div className='services-service'>
-                        <div className='services-service-image' style={{ backgroundImage: `url(${Slika1})`, backgroundSize: 'cover' }}></div>
-                        <div className='service-hook'>
-                            <h1 className='service-hook-header'>Lorem Ipsum</h1>
-                            <p className='service-hook-paragraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            
-                        </div>
-                        <div className='arrow-icon'>
-                                <FontAwesomeIcon icon={faArrowRight} style={{ color: "#74ffbc" }} />
+            <div className='services-wrapper'>
+                <div className='services-column1'>
+                    <div className='service-cell'>
+                        <img src={instalacije} className='service-img' alt='service-instalacija' />
+                        <div className='services-paragraph-container'>
+                            <p className='service-paragraph'>{t("instalacije")}</p>
+                            <div className='more-div'>
+                                <p className='services-link'>{t("read")}</p>
+                                <p className='services-link arrow-margin'>&gt;&gt;</p>
+
                             </div>
+                        </div>
+
+                    </div>
+
+                    <div className='service-cell'>
+                        <img src={crpalke} className='service-img' alt='service-instalacija' />
+                        <div className='services-paragraph-container'>
+                            <p className='service-paragraph'>{t("crpalke")}</p>
+                            <div className='more-div'>
+                                <p className='services-link'>{t("read")}</p>
+                                <p className='services-link arrow-margin'>&gt;&gt;</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className='service-cell'>
+                        <img src={strelo} className='service-img' alt='service-instalacija' />
+                        <div className='services-paragraph-container'>
+                            <p className='service-paragraph'>{t("strelovod")}</p>
+                            <div className='more-div'>
+                                <p className='services-link'>{t("read")}</p>
+                                <p className='services-link arrow-margin'>&gt;&gt;</p>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div className='services-container'>
-                    <div className='services-service'>
-                        <div className='services-service-image' style={{ backgroundImage: `url(${Slika2})`, backgroundSize: 'cover' }}></div>
-                        <div className='service-hook'>
-                            <h1 className='service-hook-header'>Lorem Ipsum</h1>
-                            <p className='service-hook-paragraph'>Viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
-                            
-                        </div>
-                        <div className='arrow-icon'>
-                                <FontAwesomeIcon icon={faArrowRight} style={{ color: "#74ffbc" }} />
+                <div className='services-column2'>
+                    <div className='service-cell'>
+                        <img src={razsvetljava} className='service-img' alt='service-razsvetlava' />
+                        <div className='services-paragraph-container'>
+                            <p className='service-paragraph'>{t("razsvetljava")}</p>
+                            <div className='more-div'>
+                                <p className='services-link'>{t("read")}</p>
+                                <p className='services-link arrow-margin'>&gt;&gt;</p>
+
                             </div>
+                        </div>
                     </div>
-                </div>
-                <div className='services-container'>
-                    <div className='services-service'>
-                        <div className='services-service-image' style={{ backgroundImage: `url(${Slika3})`, backgroundSize: 'cover' }}></div>
-                        <div className='service-hook'>
-                            <h1 className='service-hook-header'>Lorem Ipsum</h1>
-                            <p className='service-hook-paragraph'>Nibh mauris cursus mattis molestie. Dolor sit amet consectetur adipiscing elit.</p>
-                            
-                        </div>
-                        <div className='arrow-icon'>
-                                <FontAwesomeIcon icon={faArrowRight} style={{ color: "#74ffbc" }} />
+                    <div className='service-cell'>
+                        <img src={smart} className='service-img' alt='service-razsvetlava' />
+                        <div className='services-paragraph-container'>
+                            <p className='service-paragraph'>{t("smart")}</p>
+                            <div className='more-div'>
+                                <p className='services-link'>{t("read")}</p>
+                                <p className='services-link arrow-margin'>&gt;&gt;</p>
+
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
-};
 
-export default Services;
+            <div className='super-button'>{t("kontaktzdaj")}</div>
+
+        </div>
+    )
+}
+
+export default Services
